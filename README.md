@@ -1,64 +1,154 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Supply, an e-commerce Jekyll theme with Gumroad integration
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d0fa21a2-19fa-45da-a77a-024c58295e7f/deploy-status)](https://app.netlify.com/sites/supply-demo/deploys)
 
-## About Laravel
+Supply is an e-commerce template for [Jekyll](https://jekyllrb.com/) + [Gumroad](https://gumroad.com), designed with [Tachyons CSS](https://github.com/tachyons-css/tachyons).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+If you are a Gumroad creator, you can use Supply with Jekyll to display and sell products on your site or blog.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[Demo Site with documentation](https://supply.templates.supply)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Browse through a live demo: [https://templates.supply](https://templates.supply).
 
-## Learning Laravel
+![Supply template screenshot](/images/screenshot.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Find more [templates, themes, and Jekyll tutorials](https://jekyllrb.com/resources/).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Features
 
-## Laravel Sponsors
+- [x] List & display products, thanks to Jekyll's collections
+- [x] Take payment online using [Gumroad](https://gumroad.com)
+- [x] Contact form with [formcarry](https://www.formcarry.com)
+- [x] Map with [Leaflet](https://leafletjs.com "Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps.") thanks to the [jekyll-leaflet plugin](https://github.com/DavidJVitale/jekyll-leaflet)
+- [x] [jekyll-archives](https://github.com/jekyll/jekyll-archives) to build and sort through categories & tags pages
+- [x] Custom variables
+- [x] RSS/Atom feed
+- [x] SEO tags
+- [x] Microdata markup
+- [x] [Gulp.js](https://gulpjs.com) + [Browsersync](https://www.browsersync.io) for fast development
+- [x] Built-in site search
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Setup
 
-### Premium Partners
+1. Install [Jekyll](https://jekyllrb.com/docs/installation/)
+2. Add your site and author details in `_config.yml`.
+3. Get a workflow going to see your site's output with Jekyll locally.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+*Supply* was built with [Jekyll](http://jekyllrb.com/) version 4.0.0 and should support newer versions as well.
 
-## Contributing
+Install the dependencies with [Bundler](http://bundler.io/):
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+~~~bash
+$ bundle install
+~~~
 
-## Code of Conduct
+Run `jekyll` commands through Bundler to ensure you're using the right versions:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+~~~bash
+$ bundle exec jekyll serve
+~~~
 
-## Security Vulnerabilities
+### Config
+Add your custom configuration in the ```_config``` file.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Navigation
 
-## License
+* Exposed as a data file to give clients better access
+* Set in the *Data* / *Navigation* section, look for ```navigation.yml``` in  ```_data```.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Footer
+Look for ```footer.html``` in ```_includes``` to add and change your footer links.
+
+### Contact Page
+To add you formcarry endpoint URL to `_config.yml`, you'll need a fromcarry account, please refer to [formcarry documentation](https://formcarry.com/documentation/getting-started)
+
+Add your map coordinates if you want to display a map. Please refer to the [jekyll-leaflet plugin](https://davidjvitale.com/tech/jekyll-leaflet/getting-started/) and [Leaflet](https://leafletjs.co
+  m) documentation for customizing your map(s).
+
+### Product Pages
+If you have products on Gumroad, you can start adding product pages right away. Within the Supply theme, you'll find a sample of a product page with free products, ```free-products.html```, located in ```_pages```.
+
+
+## Develop
+
+### Building front-end assets: styles and scripts
+
+4. Install Node module dependencies:
+
+~~~bash
+npm install
+~~~
+
+
+### Tachyons
+
+You can change the site styling using [Tachyons](http://tachyons.io), look for the CSS in the `sup-theme` file, located in the `src` folder.
+
+Tachyons is a CSS toolkit and design system based on using components. Please refer to [Tachyons documentation](http://tachyons.io/docs/), you can also start with [https://github.com/dwyl/learn-tachyons](https://github.com/dwyl/learn-tachyons)
+
+### Gulp commands with browser reload
+
+Supply uses a couple of custom Gulp.js commands with gulp. Make sure to install gulp 4: `npm install --global gulp-cli`. (If you have an earlier version of Gulp JS, make sure to remove it by running npm uninstall --global gulp).  Then run `npm install --save-dev gulp@4` to install it into your project development dependencies.
+
+Once that is done, to build your site & concatenate your CSS (in `assets` -> `CSS`), simply run:
+
+~~~bash
+gulp build
+~~~
+
+in Terminal.
+
+Then use
+
+
+~~~bash
+gulp watch
+~~~
+
+This command builds the site locally on port 3000, with [Browsersync](https://www.browsersync.io) so you can quickly revise design changes.
+
+
+Preview your site with browser reload at [localhost:3000](http://localhost:3000)
+Use the address [localhost:3001](http://localhost:3001) for additional features like grid preview, CSS highlighting, and more during development.
+
+
+## Editing
+
+### Posts
+
+* Add, update, or remove a post in the *Posts* collection.
+* Change the defaults when new posts are created in `_posts/_defaults.md`.
+
+### Collections
+To display products, Supply uses a collection called ```product```
+You will find a series of product samples in the `_products` collection folder. By design, all the products are on display on the home page, in Supply, that is `ìndex.html`.
+You can manually create pages based on this index to [sort your products or any other collection by custom variable](/custom-variables/).
+
+You can also add your products in regular posts, using the Gumroad [overlay](/gumroad-overlay/), [embed](/gumroad-embed/), and [hyperlinks](/gumroad-hyperlink/) method, thanks to an include snippet.
+
+Write something like:
+
+```html
+{% raw %}<a href="https://gum.co/supply class="no-underline pv2 grow db"><img class="w-100" src="/images/screenshot.png"></a>
+
+{% include gumroad-overlay.html id="supply" %}{% endraw %}
+```
+
+to get a product display like this:
+
+<a href="https://gum.co/supply" class="no-underline pv2 grow db"><img class="w-100" src="/images/screenshot.png"></a>
+
+## Copyright / License
+*Supply* is designed by [alternatyves](https://alternatyves.com/) and licensed under the [MIT license](https://github.com/YJPL/Supply/blob/master/LICENSE).
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/YJPL/Supply/pulls)
+
+Please use and [contribute to *Supply* ](https://github.com/YJPL/Supply/pulls).
+
+<a href="https://www.buymeacoffee.com/alternatyves/" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+## Who is using this?
+
+- [x] [templates.supply](https://templates.supply)
+
+Are you using Supply? [Let me know!](https://github.com/YJPL/supply/edit/master/README.md)

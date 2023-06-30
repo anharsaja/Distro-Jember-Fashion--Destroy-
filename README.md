@@ -44,8 +44,14 @@ Start the server
   php artisan serve
 ```
 
+## Demo
 
-#### Install any library
+http://localhost:8000
+
+
+
+
+## Install any library
 
 * Livewire
 ```Powershell
@@ -72,8 +78,3 @@ Require and start Turbolinks in your JavaScript bundle:
   var Turbolinks = require("turbolinks")
       Turbolinks.start()
 ```
-
-
-## Demo
-
-http://localhost:8000

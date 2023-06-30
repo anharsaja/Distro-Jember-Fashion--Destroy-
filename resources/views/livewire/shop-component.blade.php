@@ -101,7 +101,7 @@
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>${{ $product -> price }}</span>
+                                            <span>${{ $product -> regular_price }}</span>
                                             <!-- <span class="old-price">$245.8</span> -->
                                         </div>
                                         <div class="product-action-1 show">

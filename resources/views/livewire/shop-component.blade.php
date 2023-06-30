@@ -1,4 +1,14 @@
 <div>
+    <style>
+        nav svg {
+            height: 20px;
+        }
+        nav .hidden {
+            display: block;
+        }
+    </style>
+
+
     <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">

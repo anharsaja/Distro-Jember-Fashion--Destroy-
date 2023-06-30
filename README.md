@@ -45,6 +45,34 @@ Start the server
 ```
 
 
+#### Install any library
+
+* Livewire
+```Powershell
+  composer require livewire/livewire
+```
+
+
+* Breeze
+```Powershell
+  composer require laravel/breeze:1.9.4
+  php artisan breeze:install
+  npm install
+  npm run dev
+```
+
+* Turbolinks
+
+Add the turbolinks package to your application:
+```Powershell
+  npm install --save turbolinks
+```
+Require and start Turbolinks in your JavaScript bundle:
+```code
+  var Turbolinks = require("turbolinks")
+      Turbolinks.start()
+```
+
 
 ## Demo
 

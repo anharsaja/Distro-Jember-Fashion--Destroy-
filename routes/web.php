@@ -6,6 +6,7 @@ use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\CheckoutComponent;
+use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 
 /*
@@ -22,6 +23,8 @@ use App\Http\Livewire\User\UserDashboardComponent;
 Route::get('/', HomeComponent::class)->name('home.index');
 
 Route::get('/shop', ShopComponent::class)->name('shop');
+
+Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
 Route::get('/cart', CartComponent::class)->name('shop.cart');
 

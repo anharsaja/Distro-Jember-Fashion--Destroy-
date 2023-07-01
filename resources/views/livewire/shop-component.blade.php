@@ -3,6 +3,7 @@
         nav svg {
             height: 20px;
         }
+
         nav .hidden {
             display: block;
         }
@@ -135,13 +136,11 @@
                         <div class="widget-category mb-30">
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                             <ul class="categories">
-                                <li><a href="shop.html">Shoes & Bags</a></li>
-                                <li><a href="shop.html">Blouses & Shirts</a></li>
-                                <li><a href="shop.html">Dresses</a></li>
-                                <li><a href="shop.html">Swimwear</a></li>
-                                <li><a href="shop.html">Beauty</a></li>
-                                <li><a href="shop.html">Jewelry & Watch</a></li>
-                                <li><a href="shop.html">Accessories</a></li>
+
+                                @foreach($categories as $category)
+                                <li><a href="{{ route('product.category', ['slug' => $category->slug]) }}">{{ $category->name }}</a></li>
+                                @endforeach
+
                             </ul>
                         </div>
                         <!-- Fillter By Price -->

@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
+use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::get('/cart', CartComponent::class)->name('shop.cart');
 
 Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
 
+Route::get('/product-category/{slug}', CategoryComponent::class)->name('product.category');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
@@ -37,6 +40,8 @@ Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
 });
+
+
 Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
 });

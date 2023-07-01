@@ -51,16 +51,15 @@
                                             <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span> Featured <i class="fi-rs-angle-small-down"></i></span>
+                                            <span> Default Sorting <i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="active" href="#">Featured</a></li>
-                                            <li><a href="#">Price: Low to High</a></li>
-                                            <li><a href="#">Price: High to Low</a></li>
-                                            <li><a href="#">Release Date</a></li>
-                                            <li><a href="#">Avg. Rating</a></li>
+                                            <li><a class="{{ $orderBy == 'Default Sorting' ? 'active': '' }}" href="#" wire:click.prevent="changeOrderBy('Default Sorting')">Default Sorting</a></li>
+                                            <li><a class="{{ $orderBy == 'Price: Low to High' ? 'active': '' }}" href="#" wire:click.prevent="changeOrderBy('Price: Low to High')">Price: Low to High</a></li>
+                                            <li><a class="{{ $orderBy == 'Price: High to Low' ? 'active': '' }}" href="#" wire:click.prevent="changeOrderBy('Price: High to Low')">Price: High to Low</a></li>
+                                            <li><a class="{{ $orderBy == 'Sort By Newness' ? 'active': '' }}" href="#" wire:click.prevent="changeOrderBy('Sort By Newness')">Sort By Newness</a></li>
                                         </ul>
                                     </div>
                                 </div>

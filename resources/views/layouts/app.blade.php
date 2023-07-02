@@ -708,6 +708,7 @@
     <script src="{{ asset('assets/js/main.js?v=3.3') }}"></script>
     <script src="{{ asset('assets/js/shop.js?v=3.3') }}"></script>
     @livewireScripts
+    @stack('scripts')
 </body>
 
 </html>

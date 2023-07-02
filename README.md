@@ -1,5 +1,6 @@
 
-# Clothes E-Commerce
+# Distro Clothes Fasion
+## Store : Distro Jember. F
 
 Ini adalah website E-Commerce yang saya buat dengan tema Toko Pakaian. Untuk framework yang saya gunakan yaitu laravel.
 

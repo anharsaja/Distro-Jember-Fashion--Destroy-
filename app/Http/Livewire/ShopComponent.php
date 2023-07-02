@@ -2,16 +2,17 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Category;
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Category;
 use Livewire\WithPagination;
-use Cart;
 
 class ShopComponent extends Component
 {
     use WithPagination;
-    public $pageSize = 12;
+    public $pageSize = 9;
     public $orderBy = "Default Sorting";
 
     public function store($product_id, $product_name, $product_price)

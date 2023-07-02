@@ -2,11 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Category;
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Category;
 use Livewire\WithPagination;
-use Cart;
 
 class CategoryComponent extends Component
 {

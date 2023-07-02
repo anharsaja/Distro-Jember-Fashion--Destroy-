@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="{{ $pageSize == 12 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(12)">12</a></li>
+                                            <li><a class="{{ $pageSize == 9 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(9)">9</a></li>
                                             <li><a class="{{ $pageSize == 15 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(15)">15</a></li>
                                             <li><a class="{{ $pageSize == 25 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(25)">25</a></li>
                                             <li><a class="{{ $pageSize == 32 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(32)">32</a></li>

@@ -7,6 +7,7 @@ Ini adalah website E-Commerce yang saya buat dengan tema Toko Pakaian. Untuk fra
 ## Screenshots
 
 ![App Screenshot](./public/assets/imgs/contoh.png)
+![App Screenshot](./public/assets/imgs/contoh2.png)
 
 
 ## Run Locally

@@ -2,7 +2,7 @@
 # Distro Clothes Fasion
 ## Store : Distro Jember. F
 
-Ini adalah website E-Commerce yang saya buat dengan tema Toko Pakaian. Untuk framework yang saya gunakan yaitu laravel.
+Ini adalah website E-Commerce yang bertemakan Distro dengan nama website "Destroy". Website ini dibuat untuk memenuhi pemesanan dari Store Distro Jember yang menjual aneka Fasion dengan tema distro. Untuk lebih lengkapnya bisa lihar di halaman website Funspooky Jember, alamat Jl. MT. Haryono Np. 101a.
 
 
 ## Screenshots

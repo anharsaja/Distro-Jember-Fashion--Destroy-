@@ -7,6 +7,15 @@
         nav .hidden {
             display: block;
         }
+
+        .wishlisted {
+            background-color: #F15412 !important;
+            border: 1px solid transparent !important;
+        }
+
+        .wishlisted i {
+            color: #fff !important;
+        }
     </style>
 
 
@@ -39,10 +48,10 @@
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="{{ $pageSize == 9 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(9)">9</a></li>
-                                            <li><a class="{{ $pageSize == 15 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(15)">15</a></li>
-                                            <li><a class="{{ $pageSize == 25 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(25)">25</a></li>
-                                            <li><a class="{{ $pageSize == 32 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(32)">32</a></li>
+                                            <li><a class="{{ $pageSize == 12 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(12)">12</a></li>
+                                            <li><a class="{{ $pageSize == 18 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(18)">18</a></li>
+                                            <li><a class="{{ $pageSize == 24 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(24)">24</a></li>
+                                            <li><a class="{{ $pageSize == 30 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(30)">30</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -67,6 +76,10 @@
                             </div>
                         </div>
                         <div class="row product-grid-3">
+
+                            @php
+                            $witems = Cart::instance('wistlist')->content()->pluck('id');
+                            @endphp
 
                             @foreach($products as $product)
 
@@ -104,6 +117,13 @@
                                             <!-- <span class="old-price">$245.8</span> -->
                                         </div>
                                         <div class="product-action-1 show">
+
+                                            @if($witems->contains($product->id))
+                                            <a aria-label="Add To Wishlist" class="action-btn hover-up wishlisted" href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                            @else
+                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="#" wire:click.prevent="addToWishlist({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})"><i class="fi-rs-heart"></i></a>
+                                            @endif
+
                                             <a aria-label="Add To Cart" class="action-btn hover-up" wire:click.prevent="store({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
@@ -264,8 +284,8 @@
             values: [0, 1000],
             slide: function(event, ui) {
                 // amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
-                @this.set('min_value',ui.values[0]);
-                @this.set('max_value',ui.values[1]);
+                @this.set('min_value', ui.values[0]);
+                @this.set('max_value', ui.values[1]);
             }
         });
     });

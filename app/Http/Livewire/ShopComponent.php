@@ -12,7 +12,7 @@ use Livewire\WithPagination;
 class ShopComponent extends Component
 {
     use WithPagination;
-    public $pageSize = 12;
+    public $pageSize = 50;
     public $orderBy = "Default Sorting";
 
     public $min_value = 0;
@@ -20,7 +20,8 @@ class ShopComponent extends Component
 
     public function store($product_id, $product_name, $product_price)
     {
-        Cart::instace('cart')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        // Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
         session()->flash('success_message', 'Item add in cart');
         return redirect()->route('shop.cart');
     }
@@ -33,9 +34,9 @@ class ShopComponent extends Component
     public function changeOrderBy($order)
     {
         $this->orderBy = $order;
-    }
+    }   
 
-    public function addToWistlist($product_id, $product_name, $product_price)
+    public function addToWishlist($product_id, $product_name, $product_price)
     {
         Cart::instance('wistlist')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
         $this->emitTo('wishlist-icon-component', 'refreshComponent');

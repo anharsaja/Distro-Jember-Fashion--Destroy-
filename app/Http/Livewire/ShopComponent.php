@@ -34,7 +34,7 @@ class ShopComponent extends Component
     public function changeOrderBy($order)
     {
         $this->orderBy = $order;
-    }   
+    }
 
     public function addToWishlist($product_id, $product_name, $product_price)
     {
@@ -42,22 +42,26 @@ class ShopComponent extends Component
         $this->emitTo('wishlist-icon-component', 'refreshComponent');
     }
 
+    public function removeFromWishlist($product_id)
+    {
+        foreach (Cart::instance('wishlist')->content() as $witem) {
+            if ($witem->id == $product_id) {
+                Cart::instance('wishlist')->remove($witem->rowId);
+                $this->emitTo('wishlist-icon-component', 'refreshComponent');
+                return;
+            }
+        }
+    }
+
     public function render()
     {
-        if ($this->orderBy == 'Price: Low to High') 
-        {
+        if ($this->orderBy == 'Price: Low to High') {
             $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
-        } 
-        else if ($this->orderBy == 'Price: High to Low') 
-        {
+        } else if ($this->orderBy == 'Price: High to Low') {
             $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->orderBy('regular_price', 'DESC')->paginate($this->pageSize);
-        } 
-        else if ($this->orderBy == 'Sort By Newness')
-        {
+        } else if ($this->orderBy == 'Sort By Newness') {
             $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->orderBy('created_at', 'DESC')->paginate($this->pageSize);
-        }
-        else
-        {
+        } else {
             $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->paginate($this->pageSize);
         }
         $categories = Category::orderBy('name', 'ASC')->get();

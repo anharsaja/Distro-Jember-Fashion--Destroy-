@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="{{ $pageSize == 12 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(12)">12</a></li>
+                                            <li><a class="{{ $pageSize == 12 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(50)">12</a></li>
                                             <li><a class="{{ $pageSize == 18 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(18)">18</a></li>
                                             <li><a class="{{ $pageSize == 24 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(24)">24</a></li>
                                             <li><a class="{{ $pageSize == 30 ? 'active': '' }}" href="#" wire:click.prevent="changePageSize(30)">30</a></li>
@@ -78,7 +78,7 @@
                         <div class="row product-grid-3">
 
                             @php
-                            $witems = Cart::instance('wistlist')->content()->pluck('id');
+                            $witems = Cart::instance('wishlist')->content()->pluck('id');
                             @endphp
 
                             @foreach($products as $product)

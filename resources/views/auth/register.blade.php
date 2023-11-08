@@ -22,10 +22,12 @@
                                         <form method="post" action="{{ route('register') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="text" required="" name="name" placeholder="Name" :value="old('name')" required autofocus autocomplete="name">
+                                                <!-- <input type="text" required="" name="name" placeholder="Name" :value="old('name')" required autofocus autocomplete="name"> -->
+                                                <input type="text" required="" name="name" placeholder="Name" required autofocus autocomplete="name">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" required="" name="email" placeholder="Email" :value="old('email')" required>
+                                                <!-- <input type="text" required="" name="email" placeholder="Email" :value="old('email')" required> -->
+                                                <input type="text" required="" name="email" placeholder="Email" required>
                                             </div>
                                             <div class="form-group">
                                                 <input required="" type="password" name="password" placeholder="Password" requried autocomplete="new-password">

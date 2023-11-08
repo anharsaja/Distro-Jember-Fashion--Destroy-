@@ -88,8 +88,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="{{ route('product.details', ['slug' => $product -> slug]) }}">
-                                                <img class="hover-img" src="{{ asset('assets/imgs/shop/product-')}}{{ $product -> id }}-1.jpg" alt="{{ $product -> name }}">
-                                                <img class="default-img" src="{{ asset('assets/imgs/shop/product-')}}{{ $product -> id }}-2.jpg" alt="{{ $product -> name }}">
+                                                <img class="default-img" src="{{ asset('assets/imgs/shop/product-')}}{{ $product -> id }}-1.jpg" alt="{{ $product -> name }}">
+                                                <img class="hover-img" src="{{ asset('assets/imgs/shop/product-')}}{{ $product -> id }}-2.jpg" alt="{{ $product -> name }}">
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -169,7 +169,7 @@
                                 <h5 class="widget-title mb-10">Fillter by price</h5>
                                 <div class="bt-1 border-color-1"></div>
                             </div>
-                            <div class="price-filter">
+                            <!-- <div class="price-filter">
                                 <div class="price-filter-inner">
                                     <div id="slider-range" wire:ignore></div>
                                     <div class="price_slider_amount">
@@ -178,7 +178,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="list-group">
                                 <div class="list-group-item mb-10 mt-10">
                                     <label class="fw-900">Color</label>
@@ -215,7 +215,7 @@
                                 Fillter</a>
                         </div>
                         <!-- Product sidebar Widget -->
-                        <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
+                        <!-- <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
                             <div class="widget-header position-relative mb-20 pb-10">
                                 <h5 class="widget-title mb-10">New products</h5>
                                 <div class="bt-1 border-color-1"></div>
@@ -256,15 +256,17 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="banner-img wow fadeIn mb-45 animated d-lg-block d-none">
+                        </div> -->
+
+                        <!-- banner woman product -->
+                        <!-- <div class="banner-img wow fadeIn mb-45 animated d-lg-block d-none">
                             <img src="{{ asset('assets/imgs/banner/banner-11.jpg') }}" alt="">
                             <div class="banner-text">
                                 <span>Women Zone</span>
                                 <h4>Save 17% on <br>Office Dress</h4>
                                 <a href="shop.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -272,7 +274,7 @@
     </main>
 </div>
 
-@push('scripts')
+<!-- @push('scripts')
 <script>
     var sliderrange = $('#slider-range');
     var amountprice = $('#amount');
@@ -290,4 +292,4 @@
         });
     });
 </script>
-@endpush
+@endpush -->

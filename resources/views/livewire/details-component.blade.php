@@ -24,9 +24,9 @@
                                                 <img src="{{ asset('assets/imgs/shop/product-')}}{{ $product->id }}-2.jpg" alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
+                                                <img src="{{ asset('assets/imgs/shop/product-')}}{{ $product->id }}-1.jpg" alt="product image">
                                             </figure>
-                                            <figure class="border-radius-10">
+                                            <!-- <figure class="border-radius-10">
                                                 <img src="{{ asset('assets/imgs/shop/product-16-3.jpg') }}" alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
@@ -40,17 +40,17 @@
                                             </figure>
                                             <figure class="border-radius-10">
                                                 <img src="{{ asset('assets/imgs/shop/product-16-7.jpg') }}" alt="product image">
-                                            </figure>
+                                            </figure> -->
                                         </div>
                                         <!-- THUMBNAILS -->
                                         <div class="slider-nav-thumbnails pl-15 pr-15">
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}" alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}" alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/product-')}}{{ $product->id }}-2.jpg" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/product-')}}{{ $product->id }}-1.jpg" alt="product image"></div>
+                                            <!-- <div><img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg') }}" alt="product image"></div>
                                             <div><img src="{{ asset('assets/imgs/shop/thumbnail-6.jpg') }}" alt="product image"></div>
                                             <div><img src="{{ asset('assets/imgs/shop/thumbnail-7.jpg') }}" alt="product image"></div>
                                             <div><img src="{{ asset('assets/imgs/shop/thumbnail-8.jpg') }}" alt="product image"></div>
-                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-9.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-9.jpg') }}" alt="product image"></div> -->
                                         </div>
                                     </div>
                                     <!-- End Gallery -->
@@ -97,7 +97,9 @@
                                                 <li><i class="fi-rs-credit-card mr-5"></i> Cash on Delivery available</li>
                                             </ul>
                                         </div> -->
-                                        <div class="attr-detail attr-color mb-15">
+
+                                        <!-- COLOORRRRRR -->
+                                        <!-- <div class="attr-detail attr-color mb-15">
                                             <strong class="mr-10">Color</strong>
                                             <ul class="list-filter color-filter">
                                                 <li><a href="#" data-color="Red"><span class="product-color-red"></span></a></li>
@@ -108,7 +110,7 @@
                                                 <li><a href="#" data-color="Green"><span class="product-color-green"></span></a></li>
                                                 <li><a href="#" data-color="Purple"><span class="product-color-purple"></span></a></li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                         <div class="attr-detail attr-size">
                                             <strong class="mr-10">Size</strong>
                                             <ul class="list-filter size-filter font-small">
@@ -133,9 +135,9 @@
                                             </div>
                                         </div>
                                         <ul class="product-meta font-xs color-grey mt-50">
-                                            <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
-                                            <li class="mb-5">Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">Women</a>, <a href="#" rel="tag">Dress</a> </li>
-                                            <li>Availability:<span class="in-stock text-success ml-5">8 Items In Stock</span></li>
+                                            <li class="mb-5">SKU: <a href="#">{{ $product -> SKU }}</a></li>
+                                            <li class="mb-5">Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">Man</a>, <a href="#" rel="tag">Punk</a> </li>
+                                            <li>Availability:<span class="in-stock text-success ml-5">{{ $product -> quantity }} ready stock</span></li>
                                         </ul>
                                     </div>
                                     <!-- Detail Info -->
@@ -483,7 +485,7 @@
                             </ul>
                         </div>
                         <!-- Fillter By Price -->
-                        <div class="sidebar-widget price_range range mb-30">
+                        <!-- <div class="sidebar-widget price_range range mb-30">
                             <div class="widget-header position-relative mb-20 pb-10">
                                 <h5 class="widget-title mb-10">Fill by price</h5>
                                 <div class="bt-1 border-color-1"></div>
@@ -525,7 +527,7 @@
                                 </div>
                             </div>
                             <a href="shop.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Fillter</a>
-                        </div>
+                        </div> -->
                         <!-- Product sidebar Widget -->
                         <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
                             <div class="widget-header position-relative mb-20 pb-10">
@@ -534,7 +536,7 @@
                             </div>
 
                             @foreach($nproducts as $nproduct)
-                            
+
                             <div class="single-post clearfix">
                                 <div class="image">
                                     <img src="{{ asset('assets/imgs/shop/product-') }}{{ $nproduct->id }}-1.jpg" alt="{{ $nproduct->name }}">
@@ -549,7 +551,7 @@
                             </div>
 
                             @endforeach
-                            
+
                         </div>
                     </div>
                 </div>
